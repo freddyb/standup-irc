@@ -133,7 +133,7 @@ irc_client.on('invite', function(channel, from) {
 irc_client.on('kick', function(channel, user, by) {
     if (user === config.irc.realNick) {
         logger.info('Kicked from ' + channel + ' by ' + by + '.');
-        commands.bye(user, channel);
+        commands.bye.func(user, channel);
     }
 });
 
